@@ -6,69 +6,82 @@
   <title>飯田研究室｜文化人類学・地域研究</title>
   <meta name="description" content="金沢大学 飯田研究室のサイト。お知らせ、研究テーマ、メンバー、プロジェクト、論文など。" />
   <style>
-    :root{
+    :root {
       --bg:#fafafa;--fg:#111;--muted:#666;--line:#e5e5e5;--brand:#0b5fff;
       --card:#ffffff;--accent:#f3f7ff;--accent-line:#dbe7ff;--shadow:0 4px 16px rgba(0,0,0,.06);
     }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;line-height:1.6}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;height:auto}
-    .wrap{display:grid;grid-template-columns:280px 1fr;gap:24px;max-width:1160px;margin:0 auto;padding:24px}
+    html,body {
+      margin:0;padding:0;background:var(--bg);color:var(--fg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;
+      line-height:1.6
+    }
+    a {color:var(--brand);text-decoration:none}
+    a:hover {text-decoration:underline}
+    img {max-width:100%;height:auto}
+
+    .header-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .wrap {display:grid;grid-template-columns:280px 1fr;gap:24px;max-width:1160px;margin:0 auto;padding:24px}
     @media (max-width: 960px){.wrap{grid-template-columns:1fr}.sidebar{position:static}.site-title{font-size:20px}}
-    header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;box-shadow:0 1px 0 var(--line)}
-    .topbar{display:flex;gap:16px;align-items:center;max-width:1160px;margin:0 auto;padding:12px 24px}
-    .site-title{font-weight:700;font-size:22px;white-space:nowrap}
-    .spacer{flex:1}
-    nav.top a{margin-left:16px;color:var(--fg)}
-    .mobile-only{display:none}
+    header {background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;box-shadow:0 1px 0 var(--line)}
+    .topbar {display:flex;gap:16px;align-items:center;max-width:1160px;margin:0 auto;padding:12px 24px}
+    .site-title {font-weight:700;font-size:22px;white-space:nowrap}
+    .spacer {flex:1}
+    nav.top a {margin-left:16px;color:var(--fg)}
+    .mobile-only {display:none}
     @media (max-width: 960px){ nav.top{display:none}.mobile-only{display:block}}
 
-    .sidebar{position:sticky;top:64px;align-self:start}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
-    .card h3{margin:0;padding:16px;border-bottom:1px solid var(--line);font-size:18px}
-    .card .inner{padding:16px}
-    .menu a{display:block;padding:10px 12px;border-radius:10px;color:var(--fg)}
-    .menu a:hover{background:var(--accent)}
-    .tag{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--accent-line);background:var(--accent);border-radius:999px;color:#123}
+    .sidebar {position:sticky;top:64px;align-self:start}
+    .card {background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .card h3 {margin:0;padding:16px;border-bottom:1px solid var(--line);font-size:18px}
+    .card .inner {padding:16px}
+    .menu a {display:block;padding:10px 12px;border-radius:10px;color:var(--fg)}
+    .menu a:hover {background:var(--accent)}
+    .tag {display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--accent-line);background:var(--accent);border-radius:999px;color:#123}
 
-    main{display:flex;flex-direction:column;gap:24px}
-    section{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
-    section>h2{margin:0;padding:18px 20px;border-bottom:1px solid var(--line);font-size:20px}
-    section .content{padding:16px 20px}
+    main {display:flex;flex-direction:column;gap:24px}
+    section {background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    section>h2 {margin:0;padding:18px 20px;border-bottom:1px solid var(--line);font-size:20px}
+    section .content {padding:16px 20px}
 
-    .news-list{display:grid;gap:14px}
-    .news-item{padding:12px;border:1px solid var(--line);border-radius:12px}
-    .news-item time{font-size:12px;color:var(--muted)}
-    .news-item a.title{display:block;font-weight:600;margin:2px 0 4px}
+    .news-list {display:grid;gap:14px}
+    .news-item {padding:12px;border:1px solid var(--line);border-radius:12px}
+    .news-item time {font-size:12px;color:var(--muted)}
+    .news-item a.title {display:block;font-weight:600;margin:2px 0 4px}
 
-    .policy{display:grid;gap:14px}
-    .policy h3{margin:0}
-    .policy p{margin:6px 0 0;color:#333}
+    .policy {display:grid;gap:14px}
+    .policy h3 {margin:0}
+    .policy p {margin:6px 0 0;color:#333}
 
-    .themes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .themes {display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     @media (max-width: 960px){.themes{grid-template-columns:1fr}}
-    .theme{border:1px solid var(--line);border-radius:12px;padding:12px}
-    .theme h4{margin:0 0 6px}
-    .theme ul{margin:6px 0 0 18px}
+    .theme {border:1px solid var(--line);border-radius:12px;padding:12px}
+    .theme h4 {margin:0 0 6px}
+    .theme ul {margin:6px 0 0 18px}
 
-    .posts-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .posts-list {display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     @media (max-width: 960px){.posts-list{grid-template-columns:1fr}}
-    .post{border:1px solid var(--line);border-radius:12px;padding:12px}
-    .post .meta{font-size:12px;color:var(--muted)}
+    .post {border:1px solid var(--line);border-radius:12px;padding:12px}
+    .post .meta {font-size:12px;color:var(--muted)}
 
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width: 960px){.contact-grid{grid-template-columns:1fr}}
 
-    footer{max-width:1160px;margin:24px auto;padding:24px;color:var(--muted);font-size:13px}
-    .links{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    footer {max-width:1160px;margin:24px auto;padding:24px;color:var(--muted);font-size:13px}
+    .links {display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
     @media (max-width: 720px){.links{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header>
+    <img src="images/header.jpg" alt="雪の日の金沢大学" class="header-photo">
     <div class="topbar">
-      <div class="site-title">金沢大学 飯田研究室｜文化人類学会・地域研究</div>
+      <div class="site-title">金沢大学 飯田研究室｜文化人類学・地域研究</div>
       <div class="spacer"></div>
       <nav class="top">
         <a href="#news">お知らせ</a>
@@ -133,8 +146,8 @@
             </article>
             <article class="news-item">
               <time datetime="2025-08-01">2025/08/01</time>
-              <a href="#" class="title">研究室配属について</a>
-              <div class="body">配属・研究生・留学生向けの案内ページへ誘導。</div>
+              <a href="#" class="title">ゼミを志望する学生さんへ</a>
+              <div class="body">研究生・留学を希望する方向けの案内ページへ誘導。</div>
             </article>
           </div>
         </div>
@@ -170,24 +183,24 @@
         <h2>研究テーマ</h2>
         <div class="content themes">
           <div class="theme">
-            <h4>伝統的居住空間の現代的変容</h4>
-            <p>地域性と生活文化に着目し、空間パターンの抽出を試みる。</p>
+            <h4>インド大衆芸能の現代的変容</h4>
+            <p>インド・マハーラーシュトラ州の大衆芸能タマーシャー、ラーワニーが社会変化によってどのように変容しているのかの研究。</p>
             <ul>
               <li><a href="#">参考資料A（DOI/論文）</a></li>
               <li><a href="#">参考資料B（報告書）</a></li>
             </ul>
           </div>
           <div class="theme">
-            <h4>時間的連続性を保つ都市・建築の更新</h4>
-            <p>スクラップ＆ビルドに代わる更新手法を探る。</p>
+            <h4>水俣のフィールドワーク</h4>
+            <p>水俣病発生以後の地域社会の分断とレジリエンスを探る。</p>
             <ul>
               <li><a href="#">プロジェクトA（改修）</a></li>
               <li><a href="#">研究ノート</a></li>
             </ul>
           </div>
           <div class="theme">
-            <h4>住経験に基づく計画手法</h4>
-            <p>住まい・暮らしの体験を可視化し、設計・教育に反映。</p>
+            <h4>能登地震のこと</h4>
+            <p>聞き取り、学生を引率した実習。</p>
             <ul>
               <li><a href="#">動画：トークイベント</a></li>
               <li><a href="#">ノート：インタビューのすすめ</a></li>
@@ -208,7 +221,7 @@
             <div class="meta">2025/05/08</div>
           </article>
           <article class="post">
-            <a href="#">スタジオ課題「◯◯」成果</a>
+            <a href="#">課題「◯◯」成果</a>
             <div class="meta">2025/04/10</div>
           </article>
           <article class="post">
