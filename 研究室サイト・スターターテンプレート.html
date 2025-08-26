@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>飯田研究室｜文化人類学・地域研究</title>
+  <meta name="description" content="金沢大学 飯田研究室のサイト。お知らせ、研究テーマ、メンバー、プロジェクト、論文など。" />
+  <style>
+    :root{
+      --bg:#fafafa;--fg:#111;--muted:#666;--line:#e5e5e5;--brand:#0b5fff;
+      --card:#ffffff;--accent:#f3f7ff;--accent-line:#dbe7ff;--shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+    .wrap{display:grid;grid-template-columns:280px 1fr;gap:24px;max-width:1160px;margin:0 auto;padding:24px}
+    @media (max-width: 960px){.wrap{grid-template-columns:1fr}.sidebar{position:static}.site-title{font-size:20px}}
+    header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;box-shadow:0 1px 0 var(--line)}
+    .topbar{display:flex;gap:16px;align-items:center;max-width:1160px;margin:0 auto;padding:12px 24px}
+    .site-title{font-weight:700;font-size:22px;white-space:nowrap}
+    .spacer{flex:1}
+    nav.top a{margin-left:16px;color:var(--fg)}
+    .mobile-only{display:none}
+    @media (max-width: 960px){ nav.top{display:none}.mobile-only{display:block}}
+
+    .sidebar{position:sticky;top:64px;align-self:start}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .card h3{margin:0;padding:16px;border-bottom:1px solid var(--line);font-size:18px}
+    .card .inner{padding:16px}
+    .menu a{display:block;padding:10px 12px;border-radius:10px;color:var(--fg)}
+    .menu a:hover{background:var(--accent)}
+    .tag{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--accent-line);background:var(--accent);border-radius:999px;color:#123}
+
+    main{display:flex;flex-direction:column;gap:24px}
+    section{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    section>h2{margin:0;padding:18px 20px;border-bottom:1px solid var(--line);font-size:20px}
+    section .content{padding:16px 20px}
+
+    .news-list{display:grid;gap:14px}
+    .news-item{padding:12px;border:1px solid var(--line);border-radius:12px}
+    .news-item time{font-size:12px;color:var(--muted)}
+    .news-item a.title{display:block;font-weight:600;margin:2px 0 4px}
+
+    .policy{display:grid;gap:14px}
+    .policy h3{margin:0}
+    .policy p{margin:6px 0 0;color:#333}
+
+    .themes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media (max-width: 960px){.themes{grid-template-columns:1fr}}
+    .theme{border:1px solid var(--line);border-radius:12px;padding:12px}
+    .theme h4{margin:0 0 6px}
+    .theme ul{margin:6px 0 0 18px}
+
+    .posts-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width: 960px){.posts-list{grid-template-columns:1fr}}
+    .post{border:1px solid var(--line);border-radius:12px;padding:12px}
+    .post .meta{font-size:12px;color:var(--muted)}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width: 960px){.contact-grid{grid-template-columns:1fr}}
+
+    footer{max-width:1160px;margin:24px auto;padding:24px;color:var(--muted);font-size:13px}
+    .links{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    @media (max-width: 720px){.links{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="site-title">金沢大学 飯田研究室｜文化人類学会・地域研究</div>
+      <div class="spacer"></div>
+      <nav class="top">
+        <a href="#news">お知らせ</a>
+        <a href="#about">研究室について</a>
+        <a href="#themes">研究テーマ</a>
+        <a href="#posts">最近の投稿</a>
+        <a href="#menu">MENU</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#links">LINK</a>
+      </nav>
+      <button class="mobile-only" id="openMenu" aria-label="メニュー">☰</button>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <div class="card" id="menu">
+        <h3>MENU</h3>
+        <div class="inner menu">
+          <a href="#members">Member メンバー</a>
+          <a href="#works">Students' Works 作品・論文</a>
+          <a href="#projects">Projects プロジェクト</a>
+          <a href="#publications">Publication 論文・公表・受賞</a>
+          <a href="#others">Others その他</a>
+          <hr />
+          <a href="#sns">活動の様子 @SNS</a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3>CONTACT</h3>
+        <div class="inner" id="contact">
+          <p>金沢大学国際基幹教育院／大学院人間社会環境研究科人文学専攻<br> 飯田玲子研究室</p>
+          <p>住所：〒920-1192 石川県金沢市角間町</p>
+          <p>Mail：<a href="mailto:labo@example.ac.jp">labo@example.ac.jp</a></p>
+          <p><a href="#" class="tag">Google Map</a>　<a href="#" class="tag">Campus Map</a></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3>LINK</h3>
+        <div class="inner links" id="links">
+          <a href="#">大学公式サイト</a>
+          <a href="#">基幹教育院・専攻</a>
+          <a href="#">関連研究室A</a>
+          <a href="#">関連研究室B</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- メイン -->
+    <main>
+      <section id="news">
+        <h2>お知らせ</h2>
+        <div class="content">
+          <div class="news-list" id="newsList">
+            <article class="news-item">
+              <time datetime="2025-10-20">2025/10/20 開催</time>
+              <a href="#" class="title">北陸人類学研究会「○○○○」</a>
+              <div class="body">イベントの概要や参加方法などを記載。</div>
+            </article>
+            <article class="news-item">
+              <time datetime="2025-08-01">2025/08/01</time>
+              <a href="#" class="title">研究室配属について</a>
+              <div class="body">配属・研究生・留学生向けの案内ページへ誘導。</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>金沢大学国際基幹教育院／大学院人間社会環境研究科 人文学専攻 飯田研究室</h2>
+        <div class="content">
+          <p>構造的差別をテーマに、インドや水俣で研究をおこなってきました。（研究室の紹介文を記載）。</p>
+          <p class="muted">※この段落は各研究室の理念に合わせて編集してください。</p>
+        </div>
+      </section>
+
+      <section id="policy">
+        <h2>研究室の基本方針</h2>
+        <div class="content policy">
+          <div>
+            <h3>フィールドワーク</h3>
+            <p>現場に身を置き、他者と一緒に手を動かす。</p>
+          </div>
+          <div>
+            <h3>多様なひとびとが生きやすい社会</h3>
+            <p>「普通」も「あたりまえ」もなくて、人間はひとりひとり違った存在です。</p>
+          </div>
+          <div>
+            <h3>書を携えて、街に出るとりあえずやってみる</h3>
+            <p>現場に出る前には、文献研究が必要です。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="themes">
+        <h2>研究テーマ</h2>
+        <div class="content themes">
+          <div class="theme">
+            <h4>伝統的居住空間の現代的変容</h4>
+            <p>地域性と生活文化に着目し、空間パターンの抽出を試みる。</p>
+            <ul>
+              <li><a href="#">参考資料A（DOI/論文）</a></li>
+              <li><a href="#">参考資料B（報告書）</a></li>
+            </ul>
+          </div>
+          <div class="theme">
+            <h4>時間的連続性を保つ都市・建築の更新</h4>
+            <p>スクラップ＆ビルドに代わる更新手法を探る。</p>
+            <ul>
+              <li><a href="#">プロジェクトA（改修）</a></li>
+              <li><a href="#">研究ノート</a></li>
+            </ul>
+          </div>
+          <div class="theme">
+            <h4>住経験に基づく計画手法</h4>
+            <p>住まい・暮らしの体験を可視化し、設計・教育に反映。</p>
+            <ul>
+              <li><a href="#">動画：トークイベント</a></li>
+              <li><a href="#">ノート：インタビューのすすめ</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="posts">
+        <h2>最近投稿された記事</h2>
+        <div class="content posts-list">
+          <article class="post">
+            <a href="#">外国人留学生の方へ / For International Students</a>
+            <div class="meta">2025/08/01</div>
+          </article>
+          <article class="post">
+            <a href="#">メンバー紹介を更新しました</a>
+            <div class="meta">2025/05/08</div>
+          </article>
+          <article class="post">
+            <a href="#">スタジオ課題「◯◯」成果</a>
+            <div class="meta">2025/04/10</div>
+          </article>
+          <article class="post">
+            <a href="#">2025年度のご案内</a>
+            <div class="meta">2025/04/08</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="sns">
+        <h2>SNS</h2>
+        <div class="content">
+          <p>Facebook / X（旧Twitter）の埋め込みやリンクを配置。</p>
+          <p>
+            <a class="tag" href="#">Facebook</a>
+            <a class="tag" href="#">X (Twitter)</a>
+            <a class="tag" href="#">YouTube</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>論文・公表・受賞</h2>
+        <div class="content">
+          <ul>
+            <li><strong>論文（査読付）</strong>：<a href="#">掲載例</a></li>
+            <li><strong>書籍</strong>：<a href="#">書籍タイトル</a></li>
+            <li><strong>講演・発表</strong>：<a href="#">イベント名</a></li>
+            <li><strong>寄稿・インタビュー</strong>：<a href="#">媒体名</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>プロジェクト</h2>
+        <div class="content">
+          <ul>
+            <li>Women's magazine in Colonial India 英領インドの女性雑誌</li>
+            <li>Minamata 水俣</li>
+            <li>Tamasha and Lavani タマーシャー、ラーワニー</li>
+            <li>Indian film インド映画</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="others">
+        <h2>その他</h2>
+        <div class="content">
+          <p>各種リンク、資料、年次報告など。</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div>© 飯田研究室, 2024</div>
+  </footer>
+
+  <script>
+    // モバイルメニュー（簡易版）
+    const btn = document.getElementById('openMenu');
+    btn?.addEventListener('click',()=>{
+      const nav = document.querySelector('nav.top');
+      if(!nav) return;
+      if(getComputedStyle(nav).display==='none'){
+        nav.style.display='block';
+      }else{
+        nav.style.display='none';
+      }
+    });
+
+    // アンカー遷移時のスムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(!id || id==="#") return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'});
+        history.pushState(null, '', id);
+      });
+    });
+  </script>
+</body>
+</html>
