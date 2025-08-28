@@ -1,0 +1,73 @@
+:root{
+  --bg:#fafafa;--fg:#111;--muted:#666;--line:#e5e5e5;--brand:#0b5fff;
+  --card:#ffffff;--accent:#f3f7ff;--accent-line:#dbe7ff;--shadow:0 4px 16px rgba(0,0,0,.06);
+}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;line-height:1.6}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto}
+
+/* ヘッダー写真（帯状 200px） */
+.header-photo{width:100%;height:200px;object-fit:cover;display:block}
+
+/* レイアウト */
+.wrap{display:grid;grid-template-columns:280px 1fr;gap:24px;max-width:1160px;margin:0 auto;padding:24px}
+@media (max-width: 960px){.wrap{grid-template-columns:1fr}.sidebar{position:static}.site-title{font-size:20px}}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;box-shadow:0 1px 0 var(--line)}
+.topbar{display:flex;gap:16px;align-items:center;max-width:1160px;margin:0 auto;padding:12px 24px}
+.site-title{font-weight:700;font-size:22px;white-space:nowrap}
+.spacer{flex:1}
+nav.top a{margin-left:16px;color:var(--fg)}
+.mobile-only{display:none}
+@media (max-width: 960px){ nav.top{display:none}.mobile-only{display:block}}
+
+.sidebar{position:sticky;top:64px;align-self:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.card h3{margin:0;padding:16px;border-bottom:1px solid var(--line);font-size:18px}
+.card .inner{padding:16px}
+.menu a{display:block;padding:10px 12px;border-radius:10px;color:var(--fg)}
+.menu a:hover{background:var(--accent)}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--accent-line);background:var(--accent);border-radius:999px;color:#123}
+
+/* メインや各セクション */
+main{display:flex;flex-direction:column;gap:24px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+section>h2{margin:0;padding:18px 20px;border-bottom:1px solid var(--line);font-size:20px}
+section .content{padding:16px 20px}
+
+/* News */
+.news-list{display:grid;gap:14px}
+.news-item{padding:12px;border:1px solid var(--line);border-radius:12px}
+.news-item time{font-size:12px;color:var(--muted)}
+.news-item a.title{display:block;font-weight:600;margin:2px 0 4px}
+
+/* Policy / Themes / Posts */
+.policy{display:grid;gap:14px}
+.policy h3{margin:0}
+.policy p{margin:6px 0 0;color:#333}
+.themes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width: 960px){.themes{grid-template-columns:1fr}}
+.theme{border:1px solid var(--line);border-radius:12px;padding:12px}
+.theme h4{margin:0 0 6px}
+.theme ul{margin:6px 0 0 18px}
+.posts-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width: 960px){.posts-list{grid-template-columns:1fr}}
+.post{border:1px solid var(--line);border-radius:12px;padding:12px}
+.post .meta{font-size:12px;color:var(--muted)}
+
+/* Contact・Links・Footer */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width: 960px){.contact-grid{grid-template-columns:1fr}}
+footer{max-width:1160px;margin:24px auto;padding:24px;color:var(--muted);font-size:13px}
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media (max-width: 720px){.links{grid-template-columns:1fr}}
+
+/* テーブル（members など） */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px;vertical-align:top;background:#fff}
+th{background:#f7f9ff;text-align:left;white-space:nowrap}
+caption{caption-side:top;text-align:left;font-weight:700;margin-bottom:8px}
+.muted{color:var(--muted);font-size:13px}
+.pill{display:inline-block;border:1px solid #dbe7ff;background:#f3f7ff;border-radius:999px;padding:2px 8px;font-size:12px;margin-right:6px}
