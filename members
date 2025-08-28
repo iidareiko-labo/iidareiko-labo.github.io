@@ -4,39 +4,127 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Members | 飯田研究室</title>
-  <link rel="stylesheet" href="style.css" /> <!-- 共通CSSがある場合 -->
+  <meta name="description" content="金沢大学 飯田研究室のメンバー一覧（在籍・修了生）。" />
+  <style>
+    :root{
+      --bg:#fafafa;--fg:#111;--muted:#666;--line:#e5e5e5;--brand:#0b5fff;
+      --card:#ffffff;--shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic UI",sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .topbar{display:flex;gap:12px;align-items:center;max-width:1160px;margin:0 auto;padding:12px 20px}
+    .spacer{flex:1}
+    main{max-width:1160px;margin:20px auto;padding:0 20px;display:grid;gap:28px}
+    h1{margin:12px 0 0;font-size:22px}
+    h2{font-size:20px;margin:0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+    .card>h2{padding:16px 18px;border-bottom:1px solid var(--line)}
+    .inner{padding:16px 18px}
+
+    /* テーブル */
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:15px}
+    th,td{border:1px solid var(--line);padding:10px;vertical-align:top;background:#fff}
+    th{background:#f7f9ff;text-align:left;white-space:nowrap}
+    caption{caption-side:top;text-align:left;font-weight:700;margin-bottom:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .pill{display:inline-block;border:1px solid #dbe7ff;background:#f3f7ff;border-radius:999px;padding:2px 8px;font-size:12px;margin-right:6px}
+
+    @media (max-width:720px){
+      th,td{padding:8px}
+      table{font-size:14px}
+    }
+  </style>
 </head>
 <body>
   <header>
-    <a href="index.html">🏠 Home</a>
-    <h1>Members | メンバー</h1>
+    <div class="topbar">
+      <a href="index.html">← Home</a>
+      <div class="spacer"></div>
+      <nav>
+        <a href="#current" class="pill">在籍 / Current</a>
+        <a href="#alumni" class="pill">修了生 / Alumni</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
+    <!-- 在籍メンバー -->
+    <section id="current" class="card">
       <h2>在籍メンバー / Current Members</h2>
-
-      <div class="member">
-        <h3>森田能乃子（修士課程 / M.A. Student）</h3>
-        <p>
-          研究テーマ（Research Theme）：<br>
-          石川県七尾市青柏祭りと女人禁制に関する人類学的研究  
-          (The social roles of traditional performing arts in Japan)
-        </p>
+      <div class="inner">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>氏名 / Name</th>
+                <th>区分 / Program</th>
+                <th>研究テーマ / Research Theme</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 例：必要に応じて行を複製して編集 -->
+              <tr>
+                <td>山田 太郎 / Taro Yamada</td>
+                <td>博士課程 (D3) / Ph.D. Year 3</td>
+                <td>日本の伝統芸能と地域社会の関係<br><span class="muted">The relationship between traditional performing arts and local communities in Japan</span></td>
+              </tr>
+              <tr>
+                <td>佐藤 花子 / Hanako Sato</td>
+                <td>修士課程 (M2) / M.A. Year 2</td>
+                <td>東南アジアの移民労働と文化適応<br><span class="muted">Migrant labor and cultural adaptation in Southeast Asia</span></td>
+              </tr>
+              <tr>
+                <td>鈴木 一郎 / Ichiro Suzuki</td>
+                <td>学部4年 / B4</td>
+                <td>地方都市における地域祭りの変容<br><span class="muted">Transformation of local festivals in regional cities</span></td>
+              </tr>
+              <!-- ↑ここに追加していく -->
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">※ 学年表記例：学部=B3/B4、修士=M1/M2、博士=D1–D3（目安）</p>
       </div>
+    </section>
 
-      <div class="member">
-        <h3>佐藤 花子（学部4年生 / Undergraduate）</h3>
-        <p>
-          研究テーマ（Research Theme）：<br>
-          東南アジアの移民労働と文化適応  
-          (Migrant labor and cultural adaptation in Southeast Asia)
-        <h3>佐藤 花子（学部4年生 / Undergraduate）</h3>
-        <p>
-          研究テーマ（Research Theme）：<br>
-          東南アジアの移民労働と文化適応  
-          (Migrant labor and cultural adaptation in Southeast Asia)
-        </p>
+    <!-- 修了生（修士論文） -->
+    <section id="alumni" class="card">
+      <h2>修了生（修士） / Alumni (Master’s)</h2>
+      <div class="inner">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>年度 / Year</th>
+                <th>氏名 / Name</th>
+                <th>修士論文タイトル / Master’s Thesis Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 例：新しい年度を上に追加 -->
+              <tr>
+                <td>2025</td>
+                <td>田中 美咲 / Misaki Tanaka</td>
+                <td>水俣における記憶の継承と地域社会の変容<br><span class="muted">Transmission of memories and social transformation in Minamata</span></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>Alex Chen</td>
+                <td>Participatory urban practices in Kanazawa neighborhoods</td>
+              </tr>
+              <tr>
+                <td>2023</td>
+                <td>佐々木 翔 / Sho Sasaki</td>
+                <td>インド農村におけるジェンダー実践と生活技法<br><span class="muted">Gender practices and everyday techniques in rural India</span></td>
+              </tr>
+              <!-- ↑ここに年度順で追加 -->
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">※ タイトルは可能なら日本語＋英語併記にしてください。</p>
       </div>
     </section>
   </main>
